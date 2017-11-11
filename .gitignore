@@ -1,0 +1,5 @@
+node_modules/**/*
+.expo/**/*
+__snapshots__
+*/**/__snapshots__
+.DS_Store
