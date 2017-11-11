@@ -11,11 +11,20 @@ class SmallButton extends React.Component {
                     disabled={this.props.disabled}
                     underlayColor={Colors.green1}
                     activeOpacity={0.5}
-                    style={this.props.disabled ? styles.buttonDisabled : styles.button}
+                    style={[this.props.disabled ? styles.buttonDisabled : styles.button,
+                        { backgroundColor: this.props.color },
+                        this.props.shadow ? {
+                            shadowColor: 'black',
+                            shadowOpacity: 1.0,
+                            transform: [{ translateY: -10 }],
+                        } : {},
+                    ]}
                     onPress={this.props.onPress}
                 >
                     <View style={styles.textContainer}>
-                        <Text style={styles.buttonText}>
+                        <Text style={[styles.buttonText,
+                            { color: this.props.textColor }]}
+                        >
                             {this.props.buttonText}
                         </Text>
                     </View>
@@ -34,22 +43,14 @@ const styles = StyleSheet.create({
     button: {
         height: 80,
         width: 80,
-        backgroundColor: Colors.green2,
         borderRadius: 40,
         shadowOffset: { width: 3, height: 3 },
-        shadowColor: 'black',
-        shadowOpacity: 1.0,
-        transform: [{ translateY: -10 }],
     },
     buttonDisabled: {
         height: 80,
         width: 80,
-        backgroundColor: Colors.green2,
         borderRadius: 40,
         shadowOffset: { width: 3, height: 3 },
-        shadowColor: 'black',
-        shadowOpacity: 1.0,
-        transform: [{ translateY: -10 }],
         opacity: 0.7,
     },
     textContainer: {
@@ -58,11 +59,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     buttonText: {
-        padding: 10,
+        padding: 5,
         backgroundColor: 'transparent',
         textAlign: 'center',
         fontWeight: '700',
-        color: Colors.white1,
     },
 });
 
@@ -70,6 +70,9 @@ SmallButton.propTypes = {
     disabled: PropTypes.bool,
     onPress: PropTypes.func.isRequired,
     buttonText: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    textColor: PropTypes.string.isRequired,
+    shadow: PropTypes.bool.isRequired,
 };
 
 export default SmallButton;

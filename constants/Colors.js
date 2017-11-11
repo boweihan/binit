@@ -7,6 +7,7 @@ const yellow1 = '#F1EA45';
 const gray1 = '#EFF8EF';
 const orange1 = '#D78234';
 const white1 = '#FFFFFF';
+const transparent = 'transparent';
 
 
 export default {
@@ -17,4 +18,5 @@ export default {
     gray1,
     orange1,
     white1,
+    transparent,
 };

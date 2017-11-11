@@ -22,14 +22,15 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default class Login extends Component {
     handleLogin = () => {
-        const email = 'bowei.han100@gmail.com';
-        const password = 'password';
-        if (email != null && password != null) {
-            firebaseApp.auth().signInWithEmailAndPassword(email, password).then(() => {
-                // todo implement
-                this.props.navigation.navigate('JobList');
-            });
-        }
+        // const email = 'bowei.han100@gmail.com';
+        // const password = 'password';
+        // if (email != null && password != null) {
+        //     firebaseApp.auth().signInWithEmailAndPassword(email, password).then(() => {
+        //         // todo implement
+        //         this.props.navigation.navigate('JobList');
+        //     });
+        // }
+        this.props.navigation.navigate('TOC');
     }
 
     handleRegister = () => {
@@ -52,6 +53,9 @@ export default class Login extends Component {
                     buttonText={Localization.submit}
                     disabled={false}
                     onPress={this.handleLogin}
+                    color={Colors.green2}
+                    textColor={Colors.white1}
+                    shadow={true}
                 />
                 <View style={{ flex: 1 }}>
                     <LargeButton

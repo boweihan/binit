@@ -3,10 +3,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import LoginScreen from '../screens/LoginScreen';
 import GuestLoginScreen from '../screens/GuestLoginScreen';
-// import JobListScreen from '../screens/JobListScreen';
-// import JobDetailScreen from '../screens/JobDetailScreen';
-// import UploadScreen from '../screens/UploadScreen';
-// import BidDetailScreen from '../screens/BidDetailScreen';
+import TermsAndConditionsScreen from '../screens/TermsAndConditionsScreen';
 
 import registerForPushNotificationsAsync from '../libs/registerForPushNotificationsAsync';
 
@@ -14,10 +11,7 @@ import registerForPushNotificationsAsync from '../libs/registerForPushNotificati
 const RootStackNavigator = StackNavigator({
     Home: { screen: LoginScreen },
     GuestLogin: { screen: GuestLoginScreen },
-    // JobList: { screen: JobListScreen },
-    // JobDetail: { screen: JobDetailScreen },
-    // Upload: { screen: UploadScreen },
-    // BidDetail: { screen: BidDetailScreen },
+    TOC: { screen: TermsAndConditionsScreen },
 }, { headerMode: 'none' });
 
 export default class RootNavigator extends React.Component {

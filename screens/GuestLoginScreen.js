@@ -10,7 +10,7 @@ import LargeButton from '../components/LargeButton';
 
 export default class GuestLogin extends Component {
     handleLogin = () => {
-        // implement
+        this.props.navigation.navigate('TOC');
     }
 
     handleRegister = () => {
@@ -29,6 +29,9 @@ export default class GuestLogin extends Component {
                     buttonText={Localization.agreeAndContinue}
                     disabled={false}
                     onPress={this.handleLogin}
+                    color={Colors.green2}
+                    textColor={Colors.white1}
+                    shadow={true}
                 />
                 <View style={{ flex: 1 }}>
                     <LargeButton
