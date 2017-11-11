@@ -20,5 +20,6 @@ module.exports = {
         "react/jsx-indent-props": [2, 4],
         "global-require": 0,
         "no-use-before-define": 0,
+        "array-callback-return": 0,
     }
 };

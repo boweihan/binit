@@ -2,20 +2,20 @@ import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import LoginScreen from '../screens/LoginScreen';
-import JobListScreen from '../screens/JobListScreen';
-import JobDetailScreen from '../screens/JobDetailScreen';
-import UploadScreen from '../screens/UploadScreen';
-import BidDetailScreen from '../screens/BidDetailScreen';
+// import JobListScreen from '../screens/JobListScreen';
+// import JobDetailScreen from '../screens/JobDetailScreen';
+// import UploadScreen from '../screens/UploadScreen';
+// import BidDetailScreen from '../screens/BidDetailScreen';
 
 import registerForPushNotificationsAsync from '../libs/registerForPushNotificationsAsync';
 
 // Main App
 const RootStackNavigator = StackNavigator({
     Home: { screen: LoginScreen },
-    JobList: { screen: JobListScreen },
-    JobDetail: { screen: JobDetailScreen },
-    Upload: { screen: UploadScreen },
-    BidDetail: { screen: BidDetailScreen },
+    // JobList: { screen: JobListScreen },
+    // JobDetail: { screen: JobDetailScreen },
+    // Upload: { screen: UploadScreen },
+    // BidDetail: { screen: BidDetailScreen },
 }, { headerMode: 'none' });
 
 export default class RootNavigator extends React.Component {

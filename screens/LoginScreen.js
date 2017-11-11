@@ -1,15 +1,14 @@
 import * as firebase from 'firebase';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-    StyleSheet,
-    View,
-    TouchableHighlight,
-    Text,
-} from 'react-native';
+import { StyleSheet, View, TouchableHighlight, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import Layout from '../constants/Layout';
+import Logo from '../components/Logo';
+import Form from '../components/Form';
+import SmallButton from '../components/SmallButton';
+import LargeButton from '../components/LargeButton';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyCObkyhfqQMdrX9ksfDL0oR9tvy1WfNJFk',
@@ -27,8 +26,7 @@ export default class Login extends Component {
         const email = 'bowei.han100@gmail.com';
         const password = 'password';
         if (email != null && password != null) {
-            firebaseApp.auth().signInWithEmailAndPassword(email, password).then((userData) => {
-                console.log(userData);
+            firebaseApp.auth().signInWithEmailAndPassword(email, password).then(() => {
                 this.props.navigation.navigate('JobList');
             });
         }
@@ -36,64 +34,27 @@ export default class Login extends Component {
 
     render() {
         return (
-            <View style={styles.login_background}>
-                <TouchableHighlight
-                    underlayColor={Colors.red1}
-                    activeOpacity={0.5}
-                    style={styles.login_button}
-                    onPress={this.login}
-                    accessibilityLabel="Login Button"
-                >
-                    <MaterialCommunityIcons
-                        name="car-convertable"
-                        style={styles.login_icon}
-                    />
-                </TouchableHighlight>
-                <View style={styles.outerCircle1} />
-                <View style={styles.outerCircle2} />
+            <View style={styles.container}>
+                <Logo />
+                <Form
+                    title="LOGIN"
+                    fields={['Username', 'Password']}
+                />
+                <SmallButton buttonText="SUBMIT" disabled={false} />
+                <View style={{ flex: 1 }}>
+                    <LargeButton buttonText="REGISTER" disabled={false} />
+                    <LargeButton buttonText="GUEST LOGIN" disabled={false} />
+                </View>
+                <View style={{ flex: 1 }} />
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    login_background: {
+    container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: Colors.red1,
-    },
-    login_button: {
-        position: 'absolute',
-        backgroundColor: Colors.white1,
-        width: Layout.window.height * 0.3,
-        height: Layout.window.height * 0.3,
-        borderRadius: Layout.window.height * 0.3,
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 3,
-    },
-    outerCircle1: {
-        position: 'absolute',
-        backgroundColor: Colors.white1,
-        width: Layout.window.height * 0.4,
-        height: Layout.window.height * 0.4,
-        borderRadius: Layout.window.height * 0.4,
-        zIndex: 2,
-        opacity: 0.5,
-    },
-    outerCircle2: {
-        position: 'absolute',
-        backgroundColor: Colors.white1,
-        width: Layout.window.height * 0.5,
-        height: Layout.window.height * 0.5,
-        borderRadius: Layout.window.height * 0.5,
-        zIndex: 1,
-        opacity: 0.2,
-    },
-    login_icon: {
-        fontSize: 50,
-        color: Colors.red1,
+        backgroundColor: Colors.green1,
     },
 });
 

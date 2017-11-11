@@ -1,11 +1,12 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View, Text } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import RootNavigation from './navigation/RootNavigation';
 import ConfigureStore from './redux/store';
+import Colors from './constants/Colors';
 
 class App extends React.Component {
     state = {
@@ -15,12 +16,9 @@ class App extends React.Component {
     _loadResourcesAsync = async () =>
         Promise.all([
             Asset.loadAsync([
-                require('./assets/images/robot-dev.png'),
-                require('./assets/images/robot-prod.png'),
-                require('./assets/images/splash.png'),
+                require('./assets/images/logo.png'),
             ]),
             Font.loadAsync([
-                // This is the font that we are using for our tab bar
                 Ionicons.font,
                 { 'os bold': require('./assets/fonts/OpenSans-Bold.ttf') },
                 { 'os extra bold': require('./assets/fonts/OpenSans-ExtraBold.ttf') },
@@ -66,6 +64,7 @@ class App extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: Colors.green2,
     },
 });
 
