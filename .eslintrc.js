@@ -10,7 +10,7 @@ module.exports = {
         "indent": [2, 4],
         "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
         "react/jsx-indent": [2, 4],
-        "max-len": ["error", 150],
+        "max-len": ["error", 250],
         "react/forbid-prop-types": ["error", { "forbid": [] }],
         "react/require-default-props": 0,
         "no-underscore-dangle": 0,

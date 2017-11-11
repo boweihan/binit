@@ -13,7 +13,7 @@ class LargeButton extends React.Component {
                     underlayColor={Colors.green1}
                     activeOpacity={0.5}
                     style={this.props.disabled ? styles.buttonDisabled : styles.button}
-                    onPress={() => this.props.onPress}
+                    onPress={this.props.onPress}
                 >
                     <View style={styles.textContainer}>
                         <Text style={styles.buttonText}>
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         padding: 10,
+        fontSize: 16,
         backgroundColor: 'transparent',
         textAlign: 'center',
         fontWeight: '700',

@@ -2,6 +2,7 @@ import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import LoginScreen from '../screens/LoginScreen';
+import GuestLoginScreen from '../screens/GuestLoginScreen';
 // import JobListScreen from '../screens/JobListScreen';
 // import JobDetailScreen from '../screens/JobDetailScreen';
 // import UploadScreen from '../screens/UploadScreen';
@@ -12,6 +13,7 @@ import registerForPushNotificationsAsync from '../libs/registerForPushNotificati
 // Main App
 const RootStackNavigator = StackNavigator({
     Home: { screen: LoginScreen },
+    GuestLogin: { screen: GuestLoginScreen },
     // JobList: { screen: JobListScreen },
     // JobDetail: { screen: JobDetailScreen },
     // Upload: { screen: UploadScreen },

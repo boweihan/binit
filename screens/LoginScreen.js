@@ -1,10 +1,9 @@
 import * as firebase from 'firebase';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, TouchableHighlight, Text } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, View } from 'react-native';
 import Colors from '../constants/Colors';
-import Layout from '../constants/Layout';
+import Localization from '../constants/Localization';
 import Logo from '../components/Logo';
 import Form from '../components/Form';
 import SmallButton from '../components/SmallButton';
@@ -22,14 +21,23 @@ const firebaseConfig = {
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default class Login extends Component {
-    login = () => {
+    handleLogin = () => {
         const email = 'bowei.han100@gmail.com';
         const password = 'password';
         if (email != null && password != null) {
             firebaseApp.auth().signInWithEmailAndPassword(email, password).then(() => {
+                // todo implement
                 this.props.navigation.navigate('JobList');
             });
         }
+    }
+
+    handleRegister = () => {
+        // todo implement
+    }
+
+    handleGuest = () => {
+        this.props.navigation.navigate('GuestLogin');
     }
 
     render() {
@@ -37,13 +45,25 @@ export default class Login extends Component {
             <View style={styles.container}>
                 <Logo />
                 <Form
-                    title="LOGIN"
-                    fields={['Username', 'Password']}
+                    title={Localization.login}
+                    fields={[Localization.username, Localization.password]}
                 />
-                <SmallButton buttonText="SUBMIT" disabled={false} />
+                <SmallButton
+                    buttonText={Localization.submit}
+                    disabled={false}
+                    onPress={this.handleLogin}
+                />
                 <View style={{ flex: 1 }}>
-                    <LargeButton buttonText="REGISTER" disabled={false} />
-                    <LargeButton buttonText="GUEST LOGIN" disabled={false} />
+                    <LargeButton
+                        buttonText={Localization.register}
+                        disabled={false}
+                        onPress={this.handleRegister}
+                    />
+                    <LargeButton
+                        buttonText={Localization.guestLogin}
+                        disabled={false}
+                        onPress={this.handleGuest}
+                    />
                 </View>
                 <View style={{ flex: 1 }} />
             </View>
