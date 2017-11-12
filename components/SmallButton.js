@@ -12,7 +12,11 @@ class SmallButton extends React.Component {
                     underlayColor={Colors.green1}
                     activeOpacity={0.5}
                     style={[this.props.disabled ? styles.buttonDisabled : styles.button,
-                        { backgroundColor: this.props.color },
+                        {
+                            backgroundColor: this.props.color,
+                            borderWidth: 5,
+                            borderColor: this.props.color,
+                        },
                         this.props.shadow ? {
                             shadowColor: 'black',
                             shadowOpacity: 1.0,
@@ -41,15 +45,15 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     button: {
-        height: 80,
-        width: 80,
-        borderRadius: 40,
+        height: 90,
+        width: 90,
+        borderRadius: 45,
         shadowOffset: { width: 3, height: 3 },
     },
     buttonDisabled: {
-        height: 80,
-        width: 80,
-        borderRadius: 40,
+        height: 90,
+        width: 90,
+        borderRadius: 45,
         shadowOffset: { width: 3, height: 3 },
         opacity: 0.7,
     },

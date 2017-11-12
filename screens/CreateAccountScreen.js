@@ -4,43 +4,35 @@ import { StyleSheet, View } from 'react-native';
 import Colors from '../constants/Colors';
 import Localization from '../constants/Localization';
 import Logo from '../components/Logo';
-import ScrollableText from '../components/ScrollableText';
+import Form from '../components/Form';
 import SmallButton from '../components/SmallButton';
-import LargeButton from '../components/LargeButton';
 
-export default class GuestLogin extends Component {
-    handleLogin = () => {
+export default class Login extends Component {
+    handleCreate = () => {
         this.props.navigation.navigate('TOC');
-    }
-
-    handleRegister = () => {
-        this.props.navigation.navigate('CreateAccount');
     }
 
     render() {
         return (
             <View style={styles.container}>
                 <Logo />
-                <ScrollableText
-                    title={Localization.login}
-                    text={Localization.guestTerms}
+                <Form
+                    fields={[
+                        Localization.name,
+                        Localization.email,
+                        Localization.username,
+                        Localization.password,
+                        Localization.notARobot,
+                    ]}
                 />
                 <SmallButton
-                    buttonText={Localization.agreeAndContinue}
+                    buttonText={Localization.submit}
                     disabled={false}
-                    onPress={this.handleLogin}
+                    onPress={this.handleCreate}
                     color={Colors.green2}
                     textColor={Colors.white1}
                     shadow={true}
                 />
-                <View style={{ flex: 1 }}>
-                    <LargeButton
-                        buttonText={Localization.register}
-                        disabled={false}
-                        onPress={this.handleRegister}
-                    />
-                </View>
-                <View style={{ flex: 1 }} />
             </View>
         );
     }
@@ -51,8 +43,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.green1,
     },
+    form: {
+        flex: 4,
+    },
 });
 
-GuestLogin.propTypes = {
+Login.propTypes = {
     navigation: PropTypes.object.isRequired,
 };

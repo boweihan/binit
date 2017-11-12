@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import LoginScreen from '../screens/LoginScreen';
 import GuestLoginScreen from '../screens/GuestLoginScreen';
 import TermsAndConditionsScreen from '../screens/TermsAndConditionsScreen';
+import CreateAccountScreen from '../screens/CreateAccountScreen';
 
 import registerForPushNotificationsAsync from '../libs/registerForPushNotificationsAsync';
 
@@ -12,6 +13,7 @@ const RootStackNavigator = StackNavigator({
     Home: { screen: LoginScreen },
     GuestLogin: { screen: GuestLoginScreen },
     TOC: { screen: TermsAndConditionsScreen },
+    CreateAccount: { screen: CreateAccountScreen },
 }, { headerMode: 'none' });
 
 export default class RootNavigator extends React.Component {

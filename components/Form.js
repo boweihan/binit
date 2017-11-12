@@ -24,7 +24,7 @@ class Form extends React.Component {
         return (
             <View style={styles.formContainer}>
                 <View style={styles.form}>
-                    <Text style={styles.title}>{this.props.title}</Text>
+                    {this.props.title ? <Text style={styles.title}>{this.props.title}</Text> : null}
                     {this.props.fields.map(name => (
                         <FormField
                             key={name}
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 });
 
 Form.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     fields: PropTypes.array.isRequired,
 };
 

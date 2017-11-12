@@ -34,7 +34,7 @@ export default class Login extends Component {
     }
 
     handleRegister = () => {
-        // todo implement
+        this.props.navigation.navigate('CreateAccount');
     }
 
     handleGuest = () => {
