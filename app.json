@@ -17,7 +17,10 @@
       "assetExts": ["ttf"]
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+          "googleMapsApiKey": "AIzaSyAsoMtu23K-thfmhqCusPilDQQE3Sag3mM"
+      }
     }
   }
 }

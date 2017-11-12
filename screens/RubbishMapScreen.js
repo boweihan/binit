@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Location, Permissions,  MapView } from 'expo';
+import { Location, Permissions, MapView } from 'expo';
 import { StyleSheet, View, Image, Text } from 'react-native';
 import Layout from '../constants/Layout';
 import Colors from '../constants/Colors';
@@ -13,8 +13,8 @@ export default class RubbishMap extends Component {
         region: {
             latitude: 0,
             longitude: 0,
-            latitudeDelta: 0,
-            longitudeDelta: 0,
+            latitudeDelta: 100,
+            longitudeDelta: 100,
         },
         markers: [],
     }
@@ -36,15 +36,19 @@ export default class RubbishMap extends Component {
             region: {
                 latitude: location.coords.latitude,
                 longitude: location.coords.longitude,
-                latitudeDelta: 0.1, // hardcode zoom levels just for example
-                longitudeDelta: 0.1,
+                latitudeDelta: 100,
+                longitudeDelta: 100,
             },
         });
     };
 
-    addMarker = (info) => {
-        console.log("BOOP");
-        console.log(info);
+    addMarker = (e) => {
+        console.log(e.nativeEvent);
+        const m = this.state.markers;
+        m.push({
+            coordinate: e.nativeEvent.coordinate,
+        });
+        this.setState({ markers: m });
     }
 
     render() {
@@ -52,22 +56,36 @@ export default class RubbishMap extends Component {
             <View style={styles.container}>
                 <MapNav title={Localization.rubbishMap} />
                 <MapView
-                    // onPress={info => this.addMarker(info)}
+                    onPress={e => this.addMarker(e)}
                     showsUserLocation={true}
                     followsUserLocation={true}
+                    key={this.state.markers}
+                    provider={MapView.PROVIDER_GOOGLE}
                     style={styles.map}
-                    initialRegion={this.state.region}
+                    region={this.state.region}
+                    // customMapStyle={mapStyle}
                 >
                     {this.state.markers.map((marker) => {
-                        <MapView.Marker
-                            coordinate={{
-                                latitude: 37.78825,
-                                longitude: -122.4324,
-                            }}
-                            title="title"
-                            description="description"
-                        />;
+                        console.log(this.state.markers);
+                        return (
+                            <MapView.Marker
+                                coordinate={{
+                                    latitude: marker.coordinate.latitude,
+                                    longitude: marker.coordinate.longitude,
+                                }}
+                                title="title"
+                                description="description"
+                            />
+                        );
                     })}
+                    <MapView.Marker
+                        coordinate={{
+                            latitude: 62,
+                            longitude: 65,
+                        }}
+                        title="title"
+                        description="description"
+                    />
                 </MapView>
                 <View style={styles.footer}>
                     <MapFooter />
@@ -79,13 +97,11 @@ export default class RubbishMap extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: 'stretch',
         flex: 1,
     },
     map: {
-        position: 'absolute',
-        height: Layout.window.height,
-        width: Layout.window.width,
-        zIndex: -1,
+        flex: 1,
     },
     footer: {
         position: 'absolute',
