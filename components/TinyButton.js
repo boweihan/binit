@@ -20,7 +20,7 @@ class SmallButton extends React.Component {
                         this.props.shadow ? {
                             shadowColor: 'black',
                             shadowOpacity: 1.0,
-                            transform: [{ translateY: 5 }],
+                            transform: [{ translateY: 10 }],
                         } : {},
                     ]}
                     onPress={this.props.onPress}
@@ -45,15 +45,15 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     button: {
-        height: 50,
-        width: 50,
-        borderRadius: 25,
+        height: 40,
+        width: 40,
+        borderRadius: 20,
         shadowOffset: { width: 2, height: 2 },
     },
     buttonDisabled: {
-        height: 50,
-        width: 50,
-        borderRadius: 25,
+        height: 40,
+        width: 40,
+        borderRadius: 20,
         shadowOffset: { width: 2, height: 2 },
         opacity: 0.7,
     },
