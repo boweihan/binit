@@ -7,9 +7,13 @@ import Logo from '../components/Logo';
 import Form from '../components/Form';
 import SmallButton from '../components/SmallButton';
 
-export default class Login extends Component {
+export default class CreateAccount extends Component {
     handleCreate = () => {
         this.props.navigation.navigate('TOC');
+    }
+
+    handleDecline = () => {
+        this.props.navigation.navigate('Home');
     }
 
     render() {
@@ -25,14 +29,24 @@ export default class Login extends Component {
                         Localization.notARobot,
                     ]}
                 />
-                <SmallButton
-                    buttonText={Localization.submit}
-                    disabled={false}
-                    onPress={this.handleCreate}
-                    color={Colors.green2}
-                    textColor={Colors.white1}
-                    shadow={true}
-                />
+                <View style={{ flex: 1, flexDirection: 'row' }}>
+                    <SmallButton
+                        buttonText={Localization.cancel}
+                        disabled={false}
+                        onPress={this.handleDecline}
+                        color={Colors.transparent}
+                        textColor={Colors.green2}
+                        shadow={false}
+                    />
+                    <SmallButton
+                        buttonText={Localization.submit}
+                        disabled={false}
+                        onPress={this.handleCreate}
+                        color={Colors.green2}
+                        textColor={Colors.white1}
+                        shadow={true}
+                    />
+                </View>
             </View>
         );
     }
@@ -48,6 +62,6 @@ const styles = StyleSheet.create({
     },
 });
 
-Login.propTypes = {
+CreateAccount.propTypes = {
     navigation: PropTypes.object.isRequired,
 };

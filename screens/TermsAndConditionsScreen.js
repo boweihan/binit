@@ -9,7 +9,7 @@ import SmallButton from '../components/SmallButton';
 
 export default class TermsAndConditions extends Component {
     handleAccept = () => {
-        // implement
+        this.props.navigation.navigate('Main');
     }
 
     handleDecline = () => {

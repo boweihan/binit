@@ -17,6 +17,7 @@ class App extends React.Component {
         Promise.all([
             Asset.loadAsync([
                 require('./assets/images/logo.png'),
+                require('./assets/images/footer.png'),
             ]),
             Font.loadAsync([
                 Ionicons.font,

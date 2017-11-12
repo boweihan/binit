@@ -1,37 +1,27 @@
-/* For consistency, all colors should go in this file */
-
-const login = 'LOGIN';
-const username = 'Username';
-const password = 'Password';
-const submit = 'SUBMIT';
-const register = 'REGISTER';
-const guestLogin = 'GUEST LOGIN';
-const guestTerms = 'As a guest you agree to our terms and conditions to use this app. You will only be able to view the available data. As a member you are able to add and edit points';
-const agreeAndContinue = 'I AGREE LET ME IN';
-const accept = 'ACCEPT';
-const decline = 'DECLINE';
-const termsAndConditions = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-const termsOfService = 'TERMS OF SERVICE';
-const name = 'Name';
-const email = 'Email';
-const verifyPassword = 'Verify Password';
-const notARobot = 'I am not a Robot';
-
 export default {
-    login,
-    username,
-    password,
-    submit,
-    register,
-    guestLogin,
-    guestTerms,
-    agreeAndContinue,
-    accept,
-    decline,
-    termsAndConditions,
-    termsOfService,
-    name,
-    email,
-    verifyPassword,
-    notARobot,
+    login: 'LOGIN',
+    username: 'Username',
+    password: 'Password',
+    submit: 'SUBMIT',
+    register: 'REGISTER',
+    guestLogin: 'GUEST LOGIN',
+    guestTerms: 'As a guest you agree to our terms and conditions to use this app. You will only be able to view the available data. As a member you are able to add and edit points',
+    agreeAndContinue: 'I AGREE LET ME IN',
+    accept: 'ACCEPT',
+    decline: 'DECLINE',
+    cancel: 'CANCEL',
+    termsAndConditions: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    termsOfService: 'TERMS OF SERVICE',
+    name: 'Name',
+    email: 'Email',
+    verifyPassword: 'Verify Password',
+    notARobot: 'I am not a Robot',
+    rubbishTitle: 'Rubbish Map',
+    rubbishText: 'If you find an area with illegally dumped rubbish you can simply add it to the map',
+    locatorTitle: 'Recycling Locator',
+    locatorText: 'A map of the nearest recycling containers and services that are in and around your town',
+    infoTitle: 'Binit Information',
+    infoText: 'Information about this app and the P3 Ambiential projects throughout Europe',
+    contactTitle: 'Contact P3 Ambiential',
+    contactText: 'Get in touch with P3 Ambiential for more info about environmental events and seminars',
 };
