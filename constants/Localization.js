@@ -24,4 +24,5 @@ export default {
     infoText: 'Information about this app and the P3 Ambiential projects throughout Europe',
     contactTitle: 'Contact P3 Ambiential',
     contactText: 'Get in touch with P3 Ambiential for more info about environmental events and seminars',
+    rubbishMap: 'INTERACTIVE RUBBISH MAP',
 };

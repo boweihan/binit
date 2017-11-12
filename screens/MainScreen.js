@@ -8,7 +8,7 @@ import MainLink from '../components/MainLink';
 
 export default class MainScreen extends Component {
     handleRubbish = () => {
-        // implement
+        this.props.navigation.navigate('Rubbish');
     }
 
     handleLocator = () => {
@@ -20,7 +20,7 @@ export default class MainScreen extends Component {
     }
 
     handleContact = () => {
-        // implement
+        this.props.navigation.navigate('Home');
     }
 
     render() {

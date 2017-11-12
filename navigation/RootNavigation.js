@@ -6,6 +6,7 @@ import GuestLoginScreen from '../screens/GuestLoginScreen';
 import TermsAndConditionsScreen from '../screens/TermsAndConditionsScreen';
 import CreateAccountScreen from '../screens/CreateAccountScreen';
 import MainScreen from '../screens/MainScreen';
+import RubbishMapScreen from '../screens/RubbishMapScreen';
 
 import registerForPushNotificationsAsync from '../libs/registerForPushNotificationsAsync';
 
@@ -16,6 +17,7 @@ const RootStackNavigator = StackNavigator({
     TOC: { screen: TermsAndConditionsScreen },
     CreateAccount: { screen: CreateAccountScreen },
     Main: { screen: MainScreen },
+    Rubbish: { screen: RubbishMapScreen },
 }, { headerMode: 'none' });
 
 export default class RootNavigator extends React.Component {
