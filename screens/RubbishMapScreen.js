@@ -69,6 +69,7 @@ export default class RubbishMap extends Component {
                     // customMapStyle={mapStyle}
                 >
                     {this.state.markers.map((marker) => {
+                        console.log(marker);
                         return (
                             <MapView.Marker
                                 coordinate={{
