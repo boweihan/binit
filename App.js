@@ -18,6 +18,10 @@ class App extends React.Component {
             Asset.loadAsync([
                 require('./assets/images/logo.png'),
                 require('./assets/images/footer.png'),
+                require('./assets/images/add.png'),
+                require('./assets/images/contact.png'),
+                require('./assets/images/info.png'),
+                require('./assets/images/search.png'),
             ]),
             Font.loadAsync([
                 Ionicons.font,

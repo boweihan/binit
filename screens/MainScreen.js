@@ -34,6 +34,7 @@ export default class MainScreen extends Component {
                     onPress={this.handleRubbish}
                     header={Localization.rubbishTitle}
                     body={Localization.rubbishText}
+                    image={require('../assets/images/add.png')}
                 />
                 <MainLink
                     disabled={false}
@@ -42,6 +43,7 @@ export default class MainScreen extends Component {
                     onPress={this.handleLocator}
                     header={Localization.locatorTitle}
                     body={Localization.locatorText}
+                    image={require('../assets/images/search.png')}
                 />
                 <MainLink
                     disabled={false}
@@ -50,6 +52,7 @@ export default class MainScreen extends Component {
                     onPress={this.handleInfo}
                     header={Localization.infoTitle}
                     body={Localization.infoText}
+                    image={require('../assets/images/info.png')}
                 />
                 <MainLink
                     disabled={false}
@@ -58,6 +61,7 @@ export default class MainScreen extends Component {
                     onPress={this.handleContact}
                     header={Localization.contactTitle}
                     body={Localization.contactText}
+                    image={require('../assets/images/contact.png')}
                 />
                 <Image
                     style={styles.image}

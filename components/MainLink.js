@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableHighlight, StyleSheet, Text, View } from 'react-native';
+import { TouchableHighlight, StyleSheet, Text, View, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import Layout from '../constants/Layout';
 import Colors from '../constants/Colors';
@@ -21,13 +21,10 @@ class MainLink extends React.Component {
                 </View>
                 <TouchableHighlight
                     disabled={this.props.disabled}
-                    underlayColor={Colors.green1}
+                    underlayColor={Colors.transparent}
                     activeOpacity={0.5}
                     style={[this.props.disabled ? styles.buttonDisabled : styles.button,
                         {
-                            backgroundColor: this.props.color,
-                            borderWidth: 5,
-                            borderColor: this.props.color,
                             marginLeft: ((Layout.window.width / 3) - 90) / 2,
                             zIndex: 1000,
                         },
@@ -38,7 +35,10 @@ class MainLink extends React.Component {
                     ]}
                     onPress={this.props.onPress}
                 >
-                    <View style={styles.textContainer} />
+                    <Image
+                        style={styles.imageContainer}
+                        source={this.props.image}
+                    />
                 </TouchableHighlight>
             </View>
         );
@@ -93,10 +93,11 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 3, height: 3 },
         opacity: 0.7,
     },
-    textContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+    imageContainer: {
+        height: 90,
+        width: 90,
+        borderRadius: 45,
+        resizeMode: 'contain',
     },
     buttonText: {
         padding: 5,
@@ -109,10 +110,10 @@ const styles = StyleSheet.create({
 MainLink.propTypes = {
     disabled: PropTypes.bool,
     onPress: PropTypes.func.isRequired,
-    color: PropTypes.string.isRequired,
     shadow: PropTypes.bool.isRequired,
     header: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
+    image: PropTypes.number.isRequired,
 };
 
 export default MainLink;

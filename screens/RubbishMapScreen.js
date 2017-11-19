@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Location, Permissions, MapView } from 'expo';
-import { StyleSheet, View, Image, Text } from 'react-native';
-import Layout from '../constants/Layout';
+import { StyleSheet, View } from 'react-native';
 import Colors from '../constants/Colors';
 import Localization from '../constants/Localization';
 import MapNav from '../components/MapNav';
@@ -11,10 +10,10 @@ import MapFooter from '../components/MapFooter';
 export default class RubbishMap extends Component {
     state = {
         region: {
-            latitude: 0,
-            longitude: 0,
-            latitudeDelta: 100,
-            longitudeDelta: 100,
+            latitude: 10,
+            longitude: 10,
+            latitudeDelta: 10,
+            longitudeDelta: 10,
         },
         markers: [],
     }
@@ -36,14 +35,14 @@ export default class RubbishMap extends Component {
             region: {
                 latitude: location.coords.latitude,
                 longitude: location.coords.longitude,
-                latitudeDelta: 100,
-                longitudeDelta: 100,
+                latitudeDelta: 10,
+                longitudeDelta: 10,
             },
         });
     };
 
     addMarker = (e) => {
-        console.log(e.nativeEvent);
+        // console.log(e.nativeEvent);
         const m = this.state.markers;
         m.push({
             coordinate: e.nativeEvent.coordinate,
@@ -52,6 +51,7 @@ export default class RubbishMap extends Component {
     }
 
     render() {
+        // console.log(this.state.region);
         return (
             <View style={styles.container}>
                 <MapNav title={Localization.rubbishMap} />
@@ -59,14 +59,16 @@ export default class RubbishMap extends Component {
                     onPress={e => this.addMarker(e)}
                     showsUserLocation={true}
                     followsUserLocation={true}
-                    key={this.state.markers}
+                    key={this.state.region}
+                    // key={this.state.markers}
                     provider={MapView.PROVIDER_GOOGLE}
                     style={styles.map}
                     region={this.state.region}
+                    // onRegionChange={region => this.setState({ region })}
+                    // onRegionChangeComplete={region => this.setState({ region })}
                     // customMapStyle={mapStyle}
                 >
                     {this.state.markers.map((marker) => {
-                        console.log(this.state.markers);
                         return (
                             <MapView.Marker
                                 coordinate={{
@@ -88,7 +90,9 @@ export default class RubbishMap extends Component {
                     />
                 </MapView>
                 <View style={styles.footer}>
-                    <MapFooter />
+                    <MapFooter
+                        navigation={this.props.navigation}
+                    />
                 </View>
             </View>
         );

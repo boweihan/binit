@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import Layout from '../constants/Layout';
 import Colors from '../constants/Colors';
 import TinyButton from '../components/TinyButton';
-import Localization from '../constants/Localization';
 
-class MapNav extends React.Component {
+class MapFooter extends React.Component {
     render() {
         return (
             <View style={styles.container}>
@@ -14,41 +13,33 @@ class MapNav extends React.Component {
                     <View style={{ flex: 1 }} />
                     <View style={styles.row}>
                         <TinyButton
-                            buttonText="X"
+                            image={require('../assets/images/add.png')}
                             disabled={false}
-                            onPress={this.handleDecline}
-                            color={Colors.green1}
-                            textColor={Colors.white1}
+                            onPress={() => this.props.navigation.navigate('Rubbish')}
                             shadow={true}
                         />
                     </View>
                     <View style={styles.row}>
                         <TinyButton
-                            buttonText="X"
+                            image={require('../assets/images/search.png')}
                             disabled={false}
-                            onPress={this.handleDecline}
-                            color={Colors.green1}
-                            textColor={Colors.white1}
+                            onPress={() => this.props.navigation.navigate('Home')}
                             shadow={true}
                         />
                     </View>
                     <View style={styles.row}>
                         <TinyButton
-                            buttonText="X"
+                            image={require('../assets/images/info.png')}
                             disabled={false}
-                            onPress={this.handleDecline}
-                            color={Colors.green1}
-                            textColor={Colors.white1}
+                            onPress={() => this.props.navigation.navigate('Home')}
                             shadow={true}
                         />
                     </View>
                     <View style={styles.row}>
                         <TinyButton
-                            buttonText="X"
+                            image={require('../assets/images/contact.png')}
                             disabled={false}
-                            onPress={this.handleDecline}
-                            color={Colors.green1}
-                            textColor={Colors.white1}
+                            onPress={() => this.props.navigation.navigate('Home')}
                             shadow={true}
                         />
                     </View>
@@ -82,8 +73,8 @@ const styles = StyleSheet.create({
     },
 });
 
-MapNav.propTypes = {
-
+MapFooter.propTypes = {
+    navigation: PropTypes.object.isRequired,
 };
 
-export default MapNav;
+export default MapFooter;
