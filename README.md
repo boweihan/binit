@@ -1,6 +1,6 @@
 # BINIT
 
-This project is currently under development. 
+This project is currently under development. Check out the initial specifications here - https://www.p3ambiental.es/binit/
 
 # Technologies:
 
